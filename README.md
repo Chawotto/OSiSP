@@ -15,4 +15,4 @@
 
 ## Контакты
 Если у вас есть вопросы или предложения, пожалуйста, свяжитесь со мной:
-- GitHub: [ваш-пользователь](https://github.com/Chawotto)
+- GitHub: [Chawotto](https://github.com/Chawotto)
