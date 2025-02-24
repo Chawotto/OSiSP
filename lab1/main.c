@@ -36,6 +36,31 @@ int main(int argc, char* argv[]) {
 
     if (optind < argc) {
         dir = argv[optind];
+        optind++;
+    }
+
+    while ((opt = getopt(argc, argv, "ldfs")) != -1) {
+        switch (opt) {
+            case 'l':
+                show_links = 1;
+                break;
+            case 'd':
+                show_dirs = 1;
+                break;
+            case 'f':
+                show_files = 1;
+                break;
+            case 's':
+                sort = 1;
+                break;
+            default:
+                fprintf(stderr, "Usage: %s [dir] [-l] [-d] [-f] [-s]\n", argv[0]);
+                exit(EXIT_FAILURE);
+        }
+    }
+
+    if (!show_links && !show_dirs && !show_files) {
+        show_links = show_dirs = show_files = 1;
     }
 
     if (sort) {
